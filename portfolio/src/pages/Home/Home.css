@@ -1,0 +1,321 @@
+.home {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 0 3rem;
+  position: relative;
+  overflow: hidden;
+}
+
+/* ── Floating orbs ── */
+.orb {
+  position: absolute;
+  border-radius: 50%;
+  pointer-events: none;
+  animation: floatOrb 8s ease-in-out infinite;
+}
+@keyframes floatOrb {
+  0%, 100% { transform: translateY(0) scale(1); }
+  50%       { transform: translateY(-30px) scale(1.05); }
+}
+
+/* ── Grid ── */
+.hero-grid {
+  max-width: 1100px;
+  margin: 0 auto;
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr 420px;
+  gap: 4rem;
+  align-items: center;
+  padding-top: 80px;
+}
+
+/* ── Text side ── */
+.hero-text {
+  transition: transform 0.1s ease;
+  transform-style: preserve-3d;
+}
+
+.hero-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.75rem;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 1.5rem;
+  background: rgba(230,57,70,0.08);
+  border: 1px solid rgba(230,57,70,0.2);
+  padding: 0.4rem 1rem;
+  border-radius: 99px;
+  width: fit-content;
+  animation: fadeSlideUp 0.6s 0.1s both;
+}
+.tag-dot {
+  width: 6px; height: 6px;
+  background: var(--accent);
+  border-radius: 50%;
+  animation: pulse 2s infinite;
+}
+@keyframes pulse {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50%       { opacity: 0.4; transform: scale(1.4); }
+}
+
+.hero-name {
+  font-family: var(--font-display);
+  line-height: 0.9;
+  letter-spacing: 4px;
+  margin-bottom: 1.5rem;
+  animation: fadeSlideUp 0.6s 0.2s both;
+}
+.name-first {
+  display: block;
+  font-size: clamp(4rem, 8vw, 7rem);
+  color: var(--white);
+}
+.name-last {
+  display: block;
+  font-size: clamp(4rem, 8vw, 7rem);
+  -webkit-text-stroke: 2px var(--accent);
+  color: transparent;
+}
+
+.hero-role {
+  font-size: 1.1rem;
+  color: var(--muted);
+  line-height: 1.7;
+  margin-bottom: 2.5rem;
+  animation: fadeSlideUp 0.6s 0.3s both;
+}
+.role-divider { color: var(--accent); margin: 0 0.5rem; }
+.hero-sub { font-size: 0.9rem; }
+
+.hero-actions {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 3rem;
+  animation: fadeSlideUp 0.6s 0.4s both;
+}
+.btn-primary {
+  background: var(--accent);
+  color: #fff;
+  padding: 0.9rem 2rem;
+  border-radius: 4px;
+  font-weight: 600;
+  font-size: 0.95rem;
+  transition: transform 0.2s, box-shadow 0.2s;
+  box-shadow: 0 0 0 rgba(230,57,70,0);
+}
+.btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--glow-red);
+}
+.btn-outline {
+  border: 1px solid var(--border);
+  color: var(--white);
+  padding: 0.9rem 2rem;
+  border-radius: 4px;
+  font-size: 0.95rem;
+  transition: border-color 0.2s, color 0.2s;
+}
+.btn-outline:hover { border-color: var(--accent); color: var(--accent); }
+
+.hero-stats {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  animation: fadeSlideUp 0.6s 0.5s both;
+}
+.stat { text-align: center; }
+.stat-num {
+  display: block;
+  font-family: var(--font-display);
+  font-size: 2.2rem;
+  color: var(--accent);
+  letter-spacing: 2px;
+}
+.stat-label { font-size: 0.7rem; text-transform: uppercase; letter-spacing: 2px; color: var(--muted); }
+.stat-divider { width: 1px; height: 36px; background: var(--border); }
+
+/* ── 3D Card ── */
+.hero-card-wrap {
+  perspective: 1000px;
+  animation: fadeSlideUp 0.6s 0.3s both;
+}
+.hero-card {
+  background: linear-gradient(135deg, var(--gray2) 0%, var(--gray3) 100%);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 2rem;
+  position: relative;
+  overflow: hidden;
+  transform: rotateY(-8deg) rotateX(4deg);
+  transition: transform 0.4s ease;
+  box-shadow: 20px 20px 60px rgba(0,0,0,0.6), -2px -2px 20px rgba(255,255,255,0.03);
+}
+.hero-card:hover {
+  transform: rotateY(0deg) rotateX(0deg);
+}
+.card-glow {
+  position: absolute;
+  top: -60px; right: -60px;
+  width: 200px; height: 200px;
+  background: radial-gradient(circle, rgba(230,57,70,0.25) 0%, transparent 70%);
+  pointer-events: none;
+}
+.card-header { display: flex; align-items: center; gap: 1rem; margin-bottom: 1.5rem; }
+
+/* ── Large photo section at top of card ── */
+.card-photo-section {
+  position: relative;
+  width: 100%;
+  height: 288px;           /* 3 inches at 96 dpi */
+  border-radius: 10px;
+  overflow: hidden;
+  margin-bottom: 1.25rem;
+}
+
+/* Actual photo */
+.card-big-photo {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center top;
+  display: block;
+  border-radius: 10px;
+  transition: transform 0.4s ease;
+}
+.hero-card:hover .card-big-photo { transform: scale(1.03); }
+
+/* Placeholder shown when no photo is set */
+.card-big-placeholder {
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, var(--gray3) 0%, var(--gray1) 100%);
+  border: 2px dashed var(--border);
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+}
+.placeholder-initials {
+  font-family: var(--font-display);
+  font-size: 5rem;
+  letter-spacing: 6px;
+  color: var(--accent);
+  opacity: 0.7;
+  line-height: 1;
+  text-shadow: 0 0 40px rgba(230,57,70,0.5);
+}
+.placeholder-hint {
+  font-size: 0.72rem;
+  color: var(--muted);
+  text-align: center;
+  line-height: 1.6;
+  letter-spacing: 0.5px;
+}
+
+/* Glowing ring overlay on photo edges */
+.photo-ring {
+  position: absolute;
+  inset: 0;
+  border-radius: 10px;
+  box-shadow: inset 0 0 30px rgba(230,57,70,0.25), inset 0 -40px 40px rgba(8,8,16,0.7);
+  pointer-events: none;
+}
+
+/* "Available" badge overlaid on photo bottom-left */
+.photo-badge {
+  position: absolute;
+  bottom: 12px;
+  left: 12px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  background: rgba(8,8,16,0.8);
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(230,57,70,0.3);
+  border-radius: 99px;
+  padding: 0.3rem 0.8rem;
+  font-size: 0.72rem;
+  font-weight: 500;
+  letter-spacing: 0.5px;
+  color: var(--white);
+}
+.badge-dot {
+  width: 7px; height: 7px;
+  background: #4caf50;
+  border-radius: 50%;
+  animation: pulse 2s infinite;
+  box-shadow: 0 0 6px #4caf50;
+}
+
+/* Name + title below the photo */
+.card-identity {
+  margin-bottom: 1.25rem;
+}
+.card-name { font-weight: 600; font-size: 1rem; margin-bottom: 0.2rem; }
+.card-title { font-size: 0.8rem; color: var(--accent); letter-spacing: 1px; }
+.card-name { font-weight: 600; font-size: 1rem; margin-bottom: 0.2rem; }
+.card-title { font-size: 0.8rem; color: var(--accent); letter-spacing: 1px; }
+.card-divider { height: 1px; background: var(--border); margin-bottom: 1.5rem; }
+.card-stack { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-bottom: 1.5rem; }
+.card-tag {
+  font-size: 0.72rem;
+  padding: 0.25rem 0.7rem;
+  border: 1px solid var(--border);
+  border-radius: 99px;
+  color: var(--muted);
+  letter-spacing: 0.5px;
+}
+.card-project {
+  background: var(--gray1);
+  border-radius: 8px;
+  padding: 1rem;
+  margin-bottom: 1.5rem;
+}
+.cp-label { font-size: 0.7rem; text-transform: uppercase; letter-spacing: 2px; color: var(--muted); margin-bottom: 0.4rem; }
+.cp-link { font-size: 0.9rem; color: var(--accent); font-weight: 500; }
+.card-footer { display: flex; gap: 1.5rem; }
+.cf-item { font-size: 0.8rem; color: var(--muted); transition: color 0.2s; }
+.cf-item:hover { color: var(--white); }
+
+/* ── Scroll hint ── */
+.scroll-hint {
+  position: absolute;
+  bottom: 2rem; left: 3rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  animation: fadeSlideUp 0.6s 0.8s both;
+}
+.scroll-hint span { font-size: 0.65rem; letter-spacing: 3px; text-transform: uppercase; color: var(--muted); }
+.scroll-line {
+  width: 1px; height: 50px;
+  background: linear-gradient(to bottom, var(--accent), transparent);
+  animation: scrollDown 1.5s ease-in-out infinite;
+}
+@keyframes scrollDown {
+  0%   { transform: scaleY(0); transform-origin: top; }
+  50%  { transform: scaleY(1); transform-origin: top; }
+  51%  { transform: scaleY(1); transform-origin: bottom; }
+  100% { transform: scaleY(0); transform-origin: bottom; }
+}
+
+@keyframes fadeSlideUp {
+  from { opacity: 0; transform: translateY(24px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@media (max-width: 900px) {
+  .home { padding: 0 1.5rem; }
+  .hero-grid { grid-template-columns: 1fr; padding-top: 100px; }
+  .hero-card-wrap { display: none; }
+}

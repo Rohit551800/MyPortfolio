@@ -1,0 +1,128 @@
+.timeline {
+  max-width: 760px;
+}
+
+.tl-item {
+  display: flex;
+  gap: 1.5rem;
+  margin-bottom: 0;
+}
+
+.tl-left {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex-shrink: 0;
+  width: 24px;
+}
+
+.tl-dot {
+  width: 22px; height: 22px;
+  border-radius: 50%;
+  border: 2px solid var(--accent);
+  display: flex; align-items: center; justify-content: center;
+  background: var(--black);
+  flex-shrink: 0;
+  box-shadow: 0 0 12px rgba(230,57,70,0.5);
+}
+.tl-dot.edu { border-color: var(--accent3); box-shadow: 0 0 12px rgba(76,201,240,0.4); }
+.tl-dot.edu .tl-dot-inner { background: var(--accent3); }
+.tl-dot-inner {
+  width: 8px; height: 8px;
+  border-radius: 50%;
+  background: var(--accent);
+}
+
+.tl-line {
+  flex: 1;
+  width: 2px;
+  background: linear-gradient(to bottom, var(--accent), var(--border));
+  margin: 4px 0;
+  min-height: 40px;
+}
+
+.tl-card {
+  background: var(--gray2);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 1.5rem;
+  margin-bottom: 1.5rem;
+  flex: 1;
+  position: relative;
+  overflow: hidden;
+  transition: border-color 0.2s, transform 0.2s;
+}
+.tl-card:hover { border-color: var(--accent); transform: translateX(4px); }
+.tl-card.edu-tl:hover { border-color: var(--accent3); }
+
+.tl-card-glow {
+  position: absolute;
+  top: -30px; right: -30px;
+  width: 100px; height: 100px;
+  background: radial-gradient(circle, rgba(230,57,70,0.15) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+.tl-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 1rem;
+  gap: 1rem;
+}
+.tl-role { font-size: 1.05rem; font-weight: 600; color: var(--white); margin-bottom: 0.25rem; }
+.tl-company { font-size: 0.85rem; color: var(--accent); letter-spacing: 0.5px; }
+.tl-period {
+  font-size: 0.72rem;
+  color: var(--muted);
+  letter-spacing: 1px;
+  white-space: nowrap;
+  background: var(--gray3);
+  border: 1px solid var(--border);
+  border-radius: 99px;
+  padding: 0.2rem 0.7rem;
+}
+.tl-score {
+  font-size: 0.78rem;
+  color: var(--accent);
+  font-weight: 600;
+  margin-top: 0.3rem;
+}
+
+.tl-points { list-style: none; display: flex; flex-direction: column; gap: 0.6rem; }
+.tl-point {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+  font-size: 0.88rem;
+  color: var(--muted);
+  line-height: 1.6;
+}
+.tl-bullet {
+  width: 5px; height: 5px;
+  border-radius: 50%;
+  background: var(--accent);
+  margin-top: 8px;
+  flex-shrink: 0;
+}
+
+.tl-divider {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin: 1rem 0 1.5rem 38px;
+}
+.tl-divider span {
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  color: var(--accent3);
+  white-space: nowrap;
+}
+.tl-divider::before, .tl-divider::after {
+  content: '';
+  height: 1px;
+  background: var(--border);
+  flex: 1;
+}
+.tl-divider::before { display: none; }

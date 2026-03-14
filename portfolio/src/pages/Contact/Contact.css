@@ -1,0 +1,169 @@
+.contact-layout {
+  display: grid;
+  grid-template-columns: 1fr 1.2fr;
+  gap: 4rem;
+  align-items: start;
+}
+
+.contact-intro {
+  font-size: 0.95rem;
+  color: var(--muted);
+  line-height: 1.8;
+  margin-bottom: 2.5rem;
+}
+
+.contact-items { display: flex; flex-direction: column; gap: 1.25rem; margin-bottom: 2.5rem; }
+.contact-item {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+.ci-icon {
+  width: 44px; height: 44px;
+  background: var(--gray2);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 1.1rem;
+  flex-shrink: 0;
+  transition: border-color 0.2s;
+}
+.contact-item:hover .ci-icon { border-color: var(--accent); }
+.ci-label { font-size: 0.7rem; text-transform: uppercase; letter-spacing: 1.5px; color: var(--muted); margin-bottom: 0.15rem; }
+.ci-val { font-size: 0.9rem; font-weight: 500; }
+.ci-val.link { color: var(--accent); transition: opacity 0.2s; }
+.ci-val.link:hover { opacity: 0.7; }
+
+.contact-socials { display: flex; gap: 0.75rem; flex-wrap: wrap; }
+.social-btn {
+  font-size: 0.8rem;
+  padding: 0.5rem 1.1rem;
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  color: var(--muted);
+  transition: all 0.2s;
+}
+.social-btn:hover { border-color: var(--white); color: var(--white); }
+.social-btn.accent { border-color: var(--accent); color: var(--accent); }
+.social-btn.accent:hover { background: var(--accent); color: #fff; }
+
+/* Form */
+.contact-form-wrap {
+  background: var(--gray2);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: 2.5rem;
+}
+.contact-form { display: flex; flex-direction: column; gap: 1.25rem; }
+.form-row { display: flex; gap: 1rem; }
+.form-group { display: flex; flex-direction: column; flex: 1; }
+.form-group label {
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  color: var(--muted);
+  margin-bottom: 0.45rem;
+}
+.form-group input,
+.form-group textarea {
+  background: var(--gray1);
+  border: 1px solid var(--border);
+  color: var(--white);
+  padding: 0.8rem 1rem;
+  border-radius: 8px;
+  font-size: 0.9rem;
+  font-family: var(--font-body);
+  transition: border-color 0.2s;
+  resize: vertical;
+}
+.form-group input:focus,
+.form-group textarea:focus { outline: none; border-color: var(--accent); }
+.form-group input::placeholder,
+.form-group textarea::placeholder { color: var(--muted); opacity: 0.5; }
+
+.form-submit {
+  width: 100%;
+  padding: 1rem;
+  background: var(--accent);
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  transition: opacity 0.2s, transform 0.2s;
+}
+.form-submit:hover { opacity: 0.85; transform: translateY(-1px); }
+
+/* Success */
+.form-success {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 3rem 1rem;
+  text-align: center;
+  gap: 1rem;
+}
+.success-icon {
+  width: 60px; height: 60px;
+  border-radius: 50%;
+  background: rgba(52,211,153,0.1);
+  border: 2px solid #34d399;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 1.5rem;
+  color: #34d399;
+}
+.form-success h3 { font-family: var(--font-display); font-size: 1.8rem; letter-spacing: 2px; }
+.form-success p { font-size: 0.9rem; color: var(--muted); }
+.back-btn {
+  background: none;
+  border: 1px solid var(--border);
+  color: var(--muted);
+  padding: 0.5rem 1.25rem;
+  border-radius: 6px;
+  font-size: 0.85rem;
+  transition: all 0.2s;
+  margin-top: 0.5rem;
+}
+.back-btn:hover { border-color: var(--accent); color: var(--accent); }
+
+@media (max-width: 800px) {
+  .contact-layout { grid-template-columns: 1fr; }
+  .form-row { flex-direction: column; }
+}
+
+/* ── Loading state ── */
+.form-submit.loading {
+  opacity: 0.65;
+  cursor: not-allowed;
+  transform: none;
+  position: relative;
+  overflow: hidden;
+}
+.form-submit.loading::after {
+  content: '';
+  position: absolute;
+  left: -100%; top: 0; bottom: 0;
+  width: 60%;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.15), transparent);
+  animation: shimmer 1.2s infinite;
+}
+@keyframes shimmer { to { left: 150%; } }
+
+/* ── Disabled inputs while submitting ── */
+.contact-form input:disabled,
+.contact-form textarea:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* ── Error message ── */
+.form-error {
+  font-size: 0.85rem;
+  color: var(--accent);
+  background: rgba(230,57,70,0.08);
+  border: 1px solid rgba(230,57,70,0.2);
+  border-radius: 6px;
+  padding: 0.7rem 1rem;
+}
