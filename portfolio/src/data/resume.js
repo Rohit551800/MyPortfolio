@@ -4,7 +4,7 @@ const data = {
   subtitle: "CS Undergrad · Intern @ ProDesk IT · Problem Solver",
   email: "rohitsingh139915@gmail.com",
   phone: "+91 7006423692",
-  location: "Jaipur, Rajasthan",
+  location: "Jammu, J&K",
   github: "https://github.com/Rohit551800",
   linkedin: "https://www.linkedin.com/in/rohit-singh-gouria-475923278/",
   leetcode: "https://leetcode.com/u/rohitgouria_/",
