@@ -1,6 +1,6 @@
 const data = {
   name: "Rohit Singh Gouria",
-  title: "Frontend Developer",
+  title: "Fullstack Developer",
   subtitle: "CS Undergrad · Intern @ ProDesk IT · Problem Solver",
   email: "rohitsingh139915@gmail.com",
   phone: "+91 7006423692",
@@ -134,7 +134,7 @@ const data = {
 
   experience: [
     {
-      role: "Frontend Developer Intern",
+      role: "Fullstack Developer Intern",
       company: "ProDesk IT",
       period: "2025 – Present",
       points: [
