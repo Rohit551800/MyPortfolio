@@ -37,9 +37,11 @@ export default function Home() {
   // Card skill tags — pulled from languages + first framework
   const cardTags = [
     ...data.skills.frameworks.slice(0, 2),                            // React, React Router v6
+    data.skills.languages[1],                                         // C++
     data.skills.languages[2],                                         // JavaScript ES6+
-    data.skills.languages[0],                                         // C
-    data.skills.tools[0],                                             // Git
+    data.skills.languages[5],                                         // Node.Js
+    data.skills.tools[0],                                             // C++
+    data.skills.tools[1],                                             // Github
   ];
 
   useEffect(() => {
