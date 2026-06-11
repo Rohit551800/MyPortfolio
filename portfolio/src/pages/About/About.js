@@ -18,7 +18,7 @@ export default function About() {
             </div>
             <p className="about-desc">{resume.about}</p>
             <p className="about-desc" style={{ marginTop: '1rem' }}>
-              Currently interning at <strong style={{ color: 'var(--accent)' }}>ProDesk IT</strong> where
+              Currently interning at <strong style={{ color: 'var(--accent)' }}>Weblabs Solution</strong> where
               I built <strong>ShopZone</strong> — a full e-commerce SPA demonstrating routing, global state,
               auth, and persistence. I actively share DSA resources with peers and maintain a 9.45 GPA at ACEIT Jaipur.
             </p>
@@ -53,7 +53,7 @@ export default function About() {
               {[
                 { icon: '📍', label: 'Location',  val: 'Jammu , J&K' },
                 { icon: '🎓', label: 'College',   val: 'ACEIT Jaipur' },
-                { icon: '💼', label: 'Internship',val: 'ProDesk IT' },
+                { icon: '💼', label: 'Internship',val: 'Weblabs Solution' },
                 { icon: '📊', label: 'GPA',        val: '9.45 / 10.0' },
               ].map(f => (
                 <div className="fact-item" key={f.label}>
