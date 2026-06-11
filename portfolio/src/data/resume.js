@@ -1,7 +1,7 @@
 const data = {
   name: "Rohit Singh Gouria",
   title: "Fullstack Developer",
-  subtitle: "CS Undergrad · Intern @ ProDesk IT · Problem Solver",
+  subtitle: "CS Undergrad · Intern @ Weblabs Solution · Problem Solver",
   email: "rohitsingh139915@gmail.com",
   phone: "+91 7006423692",
   location: "Jammu, J&K",
@@ -135,7 +135,7 @@ const data = {
   experience: [
     {
       role: "Frontend Developer Intern",
-      company: "Weblabs",
+      company: "Weblabs Solution",
       period: "May 2026 – Present",
       points: [
         "Building real-world applications as part of internship projects",
