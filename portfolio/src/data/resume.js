@@ -134,15 +134,9 @@ const data = {
 
   experience: [
     {
-<<<<<<< HEAD
-      role: "Fullstack Developer Intern",
-      company: "ProDesk IT",
-      period: "2025 – Present",
-=======
       role: "Frontend Developer Intern",
       company: "Weblabs",
       period: "May 2026 – Present",
->>>>>>> dbc062ea (Skills changes & internship modification)
       points: [
         "Building real-world applications as part of internship projects",
         "Developed ShopZone — a full e-commerce SPA ",
